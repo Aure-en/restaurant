@@ -21,7 +21,7 @@ export const menu = (() => {
     ]
   };
 
-  const background = "../assets/menu.jpg";
+  const background = "../assets/images/menu.jpg";
 
   const _listCategory = (container, category, items) => {
 
@@ -47,7 +47,7 @@ export const menu = (() => {
 
     //Menu container
     const menu = document.createElement("div");
-    menu.classList.add("menu");
+    menu.classList.add("menu", "m-auto", "col-6", "p-5");
     content.append(menu);
   
     //Menu header (title and short description)
@@ -57,15 +57,17 @@ export const menu = (() => {
   
     const subhead = document.createElement("div");
     subhead.innerHTML = _menuContent.subhead;
+    subhead.classList.add("mb-5");
     menu.append(subhead);
   
     //Actual menu content (drinks and food lists)
     const menuList = document.createElement("div");
+    menuList.classList.add("menu__list", "row");
     menu.append(menuList);
   
     //1. Drinks
     const drinks = document.createElement("div");
-    drinks.classList.add("menu__drinks");
+    drinks.classList.add("menu__drinks", "col-6");
     menuList.append(drinks);
   
     //For each drink category, create the title of the category, followed by the list of items in this category.
@@ -73,7 +75,7 @@ export const menu = (() => {
     
     //2. Food
     const food = document.createElement("div");
-    food.classList.add("menu__food");
+    food.classList.add("menu__food", "col-6", "d-flex", "flex-column", "justify-content-between");
     menuList.append(food);
   
     //For each food category, create the title of the category, followed by the list of items in this category.

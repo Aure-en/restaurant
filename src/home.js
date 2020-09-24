@@ -8,12 +8,12 @@ export const home = (() => {
     "Take a sit on our cosy sofas, and read a few pages of one of our hundred novels while sipping on your favorite drink (made with ♥)."]
     };
 
-  const background = "../assets/home.jpg";
+  const background = "../assets/images/home.jpg";
 
   const display = (content) => {
 
     const home = document.createElement("div");
-    home.classList.add("home", "col-md-5", "offset-md-6", "col-lg-4", "offset-lg-7");
+    home.classList.add("home", "col-md-6", "offset-md-5", "col-lg-4", "offset-lg-6", "p-5");
     content.append(home);
     
     const title = document.createElement("h1");
