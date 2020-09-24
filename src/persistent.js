@@ -7,9 +7,12 @@ export const header = (() => {
 
   const createHeader = () => {
 
+    const header = document.createElement("header");
+    document.body.prepend(header);
+
     const nav = document.createElement("nav");
-    nav.classList.add("navbar", "navbar-expand-lg");
-    document.body.prepend(nav);
+    nav.classList.add("navbar", "navbar-expand-sm", "navbar-light");
+    header.append(nav);
 
     const navBrand = document.createElement("a");
     navBrand.classList.add("navbar-brand");
@@ -26,10 +29,11 @@ export const header = (() => {
 
     const navLinks = document.createElement("div");
     navLinks.setAttribute("id", "nav-links");
+    navLinks.classList.add("collapse", "navbar-collapse");
     nav.append(navLinks);
 
     const navLinkList = document.createElement("ul");
-    navLinkList.classList.add("navbar-nav", "mr-auto");
+    navLinkList.classList.add("navbar-nav", "ml-auto");
     navLinks.append(navLinkList);
 
     for (let link of _headerContent.nav) {
@@ -64,7 +68,7 @@ export const footer = (() => {
 
     for (let footerInformation in _footerContent) {
       let information = document.createElement("div");
-      information.innerHTML = footerInformation;
+      information.innerHTML = _footerContent[footerInformation];
       footer.append(information);
     }
   }

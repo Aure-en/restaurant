@@ -2,30 +2,37 @@ import { home } from "./home.js";
 import { menu } from "./menu.js";
 import { contact } from "./contact.js";
 import { header, footer } from "./persistent.js";
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 header.createHeader();
 footer.createFooter();
 
 const displayContent = (() => {
 
-  const _content = document.querySelector("#content");
+  const content = document.querySelector("#content");
+
+  const changeBackground = (src) => {
+    document.body.style.backgroundImage = `url('${src}')`;
+  }
 
   const _changeContent = (event) => {
-
-    console.log(event.target.innerHTML);
 
     switch (event.target.innerHTML.toLowerCase()) {
 
       case 'home':
-        home.display(_content);
+        home.display(content);
+        changeBackground(home.background);
         break;
       
       case 'menu':
-        menu.display(_content);
+        menu.display(content);
+        changeBackground(menu.background);
         break;
 
       case 'contact':
-        contact.display(_content);
+        contact.display(content);
+        changeBackground(contact.background);
         break;
 
     }
@@ -33,7 +40,7 @@ const displayContent = (() => {
   }
 
   const _removeContent = () => {
-    _content.innerHTML = "";
+    content.innerHTML = "";
   }
 
   const enableChange = () => {
@@ -43,8 +50,9 @@ const displayContent = (() => {
     }
   }
 
-  return { enableChange };
+  return { content, enableChange, changeBackground };
 
 })();
 
 displayContent.enableChange();
+window.addEventListener("load", () => { home.display(displayContent.content); displayContent.changeBackground(home.background); });

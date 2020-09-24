@@ -1,0 +1,109 @@
+@font-face {
+  font-family: 'signerica_thinregular';
+  src: url('assets/fonts/signerica_thin-webfont.eot');
+  src: url('assets/fonts/signerica_thin-webfont.eot?#iefix') format('embedded-opentype'),
+       url('assets/fonts/signerica_thin-webfont.woff2') format('woff2'),
+       url('assets/fonts/signerica_thin-webfont.woff') format('woff'),
+       url('assets/fonts/signerica_thin-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+:root {
+  --color-primary: #a7714f;
+  --color-secondary: #18555a;
+  --color-background: #f9f5f6;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  max-height: 100%;
+  background-size: cover;
+  background-position-y: 55%;
+  background-repeat: no-repeat;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+#content {
+  flex: 1;
+}
+
+.home {
+  background: rgba(255, 241, 227, 0.85);
+  padding: 1rem;
+}
+
+header,
+footer {
+  background: rgba(255, 241, 227, 0.85);
+  height: 3rem;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

@@ -15,6 +15,8 @@ export const contact = (() => {
     }
   }
 
+  const background = "../assets/contact.jpg";
+
   const display = (content) => {
 
     const contact = document.createElement("div");
@@ -36,6 +38,6 @@ export const contact = (() => {
     contact.append(address);
   }
 
-  return { display };
+  return { display, background };
 
 })();

@@ -8,10 +8,12 @@ export const home = (() => {
     "Take a sit on our cosy sofas, and read a few pages of one of our hundred novels while sipping on your favorite drink (made with ♥)."]
     };
 
+  const background = "../assets/home.jpg";
+
   const display = (content) => {
 
     const home = document.createElement("div");
-    home.classList.add("home");
+    home.classList.add("home", "col-md-5", "offset-md-6", "col-lg-4", "offset-lg-7");
     content.append(home);
     
     const title = document.createElement("h1");
@@ -25,6 +27,6 @@ export const home = (() => {
     }
   }
 
-  return { display };
+  return { display, background };
 
 })();

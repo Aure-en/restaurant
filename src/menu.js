@@ -21,6 +21,8 @@ export const menu = (() => {
     ]
   };
 
+  const background = "../assets/menu.jpg";
+
   const _listCategory = (container, category, items) => {
 
     for (let i = 0 ; i < category.length ; i++) {
@@ -79,6 +81,6 @@ export const menu = (() => {
   
   }
 
-  return { display }
+  return { display, background }
 
 })();
