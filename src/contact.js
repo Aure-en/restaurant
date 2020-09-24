@@ -15,7 +15,7 @@ export const contact = (() => {
     }
   }
 
-  const displayContact = () => {
+  const display = (content) => {
 
     const contact = document.createElement("div");
     contact.classList.add("contact");
@@ -36,6 +36,6 @@ export const contact = (() => {
     contact.append(address);
   }
 
-  return { displayContact };
+  return { display };
 
 })();

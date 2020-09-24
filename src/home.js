@@ -8,7 +8,7 @@ export const home = (() => {
     "Take a sit on our cosy sofas, and read a few pages of one of our hundred novels while sipping on your favorite drink (made with ♥)."]
     };
 
-  const displayHome = () => {
+  const display = (content) => {
 
     const home = document.createElement("div");
     home.classList.add("home");
@@ -25,6 +25,6 @@ export const home = (() => {
     }
   }
 
-  return { displayHome };
+  return { display };
 
 })();

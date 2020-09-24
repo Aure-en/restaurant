@@ -29,12 +29,19 @@ export const menu = (() => {
       container.append(title);
   
       let list = document.createElement("ul");
-      list.innerHTML = items[i];
+
+      for (let j = 0 ; j < items[i].length ; j++) {
+        let item = document.createElement("li");
+        item.innerHTML = items[i][j];
+        list.append(item);
+      }
+
       container.append(list);
+
     }
   };
 
-  const displayMenu = () => {
+  const display = (content) => {
 
     //Menu container
     const menu = document.createElement("div");
@@ -60,7 +67,7 @@ export const menu = (() => {
     menuList.append(drinks);
   
     //For each drink category, create the title of the category, followed by the list of items in this category.
-    _listCategory(food, _menuContent.drinksCategories, _menuContent.drinks);
+    _listCategory(drinks, _menuContent.drinksCategories, _menuContent.drinks);
     
     //2. Food
     const food = document.createElement("div");
@@ -72,6 +79,6 @@ export const menu = (() => {
   
   }
 
-  return { displayMenu }
+  return { display }
 
 })();
