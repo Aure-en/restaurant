@@ -17,7 +17,7 @@ export const header = (() => {
     const navBrand = document.createElement("a");
     navBrand.classList.add("navbar-brand");
     navBrand.setAttribute("href", "#");
-    navBrand.innerHTML = `<img src="../assets/images/rhodes_brand.png" alt="Rhodes Logo">`;
+    navBrand.innerHTML = `<img src="assets/images/rhodes_brand.png" alt="Rhodes Logo">`;
     nav.append(navBrand);
 
     const navToggle = document.createElement("button");

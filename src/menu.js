@@ -23,7 +23,7 @@ export const menu = (() => {
     ]
   };
 
-  const background = "../assets/images/menu.jpg";
+  const background = "assets/images/menu.jpg";
 
   const display = (content) => {
 

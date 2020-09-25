@@ -24,7 +24,7 @@ export const contact = (() => {
     title: "Reservation"
   }
 
-  const background = "../assets/images/contact.jpg";
+  const background = "assets/images/contact.jpg";
 
   const display = (content) => {
 

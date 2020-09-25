@@ -10,7 +10,7 @@ export const home = (() => {
     "Take a sit on our cosy sofas, and read a few pages of one of our hundred novels while sipping on your favorite drink (made with ♥)."]
     };
 
-  const background = "../assets/images/home.jpg";
+  const background = "assets/images/home.jpg";
 
   const display = (content) => {
 
