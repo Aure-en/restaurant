@@ -25,8 +25,6 @@ export const menu = (() => {
 
   const background = "../assets/images/menu.jpg";
 
-
-
   const display = (content) => {
 
     //Menu container
@@ -39,7 +37,7 @@ export const menu = (() => {
   
     const subhead = document.createElement("div");
     subhead.innerHTML = _menuContent.subhead;
-    subhead.classList.add("mb-5");
+    subhead.classList.add("mb-5", "text-justify");
     menu.append(subhead);
   
     //Actual menu content (drinks and food lists)

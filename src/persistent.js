@@ -22,7 +22,7 @@ export const header = (() => {
 
     const navToggle = document.createElement("button");
     navToggle.innerHTML = `<i class="fas fa-bars"></i>`;
-    navToggle.classList.add("navbar-toggler");
+    navToggle.classList.add("navbar-toggler", "mr-3");
     navToggle.setAttribute("type", "button");
     navToggle.setAttribute("data-toggle", "collapse");
     navToggle.setAttribute("data-target", "#nav-links");
@@ -39,7 +39,7 @@ export const header = (() => {
 
     for (let link of _headerContent.nav) {
       let navLink = document.createElement("button");
-      navLink.classList.add("nav-link", "px-2");
+      navLink.classList.add("nav-link", "mr-3");
       navLink.innerHTML = link;
       navLinkList.append(navLink);
     }
