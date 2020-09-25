@@ -18,10 +18,11 @@ export const home = (() => {
     home.classList.add("home", "col-md-6", "offset-md-5", "col-lg-4", "offset-lg-6", "p-5");
     content.append(home);
     
-    utils.createTitle(home, _homeContent.title, false);
+    utils.createTitle(home, _homeContent.title, "h1", false);
 
     for (let i = 0 ; i < _homeContent.text.length ; i++) {
       let paragraph = document.createElement("p");
+      paragraph.classList.add("text-justify");
       paragraph.innerHTML = _homeContent.text[i];
       home.append(paragraph);
     }

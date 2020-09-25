@@ -21,9 +21,7 @@ export const utils = (() => {
       let categoryBox = document.createElement("div");
       container.append(categoryBox);
 
-      let title = document.createElement("h3");
-      title.innerHTML = category[i];
-      categoryBox.append(title);
+      createTitle(categoryBox, category[i], "h2", false);
   
       let list = document.createElement("ul");
 
@@ -38,23 +36,37 @@ export const utils = (() => {
     }
   };
 
-  const createTitle = (container, titleContent, center) => {
-    const title = document.createElement("h1");
+  const createTitle = (container, titleContent, titleLevel, center) => {
+    const title = document.createElement(titleLevel);
     title.innerHTML = titleContent;
-    title.classList.add("mb-4");
 
-    if (center) {
-      title.classList.add("text-center");
-    }
+    if (titleLevel == "h1") title.classList.add("mb-4");
+    if (titleLevel == "h4") title.classList.add("mb-0");
+    if (center) title.classList.add("text-center");
 
     container.append(title);
+  }
+
+  const createInformations = (container, subhead, content) => {
+
+    const informationBox = document.createElement("div");
+    container.append(informationBox);
+
+    createTitle(informationBox, subhead, "h4", false);
+
+    for (let contentInformation in content) {
+      let information = document.createElement("div");
+      information.innerHTML = `${content[contentInformation]}`;
+      informationBox.append(information);
+    }
   }
 
   return {
     createLabel,
     createInput,
     createList,
-    createTitle
+    createTitle,
+    createInformations
   }
 
 })()

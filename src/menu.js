@@ -35,7 +35,7 @@ export const menu = (() => {
     content.append(menu);
   
     //Menu header (title and short description)
-    utils.createTitle(menu, _menuContent.title, true);
+    utils.createTitle(menu, _menuContent.title, "h1", true);
   
     const subhead = document.createElement("div");
     subhead.innerHTML = _menuContent.subhead;
@@ -49,7 +49,7 @@ export const menu = (() => {
   
     //1. Drinks
     const drinks = document.createElement("div");
-    drinks.classList.add("menu__drinks", "col-6");
+    drinks.classList.add("menu__drinks", "col-12", "col-sm-6");
     menuList.append(drinks);
   
     //For each drink category, create the title of the category, followed by the list of items in this category.
@@ -57,7 +57,7 @@ export const menu = (() => {
     
     //2. Food
     const food = document.createElement("div");
-    food.classList.add("menu__food", "col-6", "d-flex", "flex-column", "justify-content-between");
+    food.classList.add("menu__food", "col-12", "col-sm-6", "d-flex", "flex-column", "justify-content-between");
     menuList.append(food);
   
     //For each food category, create the title of the category, followed by the list of items in this category.

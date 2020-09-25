@@ -3,7 +3,11 @@ import { utils } from "./utils.js";
 export const contact = (() => {
 
   const _contactContent = {
-    title: "Don't be a stranger",
+    title: "Contact",
+    subheads: {
+      contact: "Let's talk",
+      address: "Let's meet"
+    },
     contact: {
       mail: "reservation@rhodes.com",
       tel: "Tel +33 (0)1 25 63 45 89",
@@ -11,10 +15,9 @@ export const contact = (() => {
     },
     address: {
       street: "15 Boulevard Saint-Martin",
-      city: "Paris",
-      zip: "75 010",
-      country: "France"
-    }
+      city: "75 010 Paris - France"
+    },
+    hours: "We are ready to welcome you with open arms every week day, from 8 to 21."
   }
 
   const _reservationContent = {
@@ -25,31 +28,25 @@ export const contact = (() => {
 
   const display = (content) => {
 
-    const contactContainer = document.createElement("div");
-    contactContainer.classList.add("m-auto", "d-flex", "justify-content-around");
-    content.append(contactContainer);
-
     const contact = document.createElement("div");
-    contact.classList.add("contact", "col-5", "p-5");
-    contactContainer.append(contact);
+    contact.classList.add("contact", "col-12", "col-sm-5", "p-sm-5", "d-flex", "flex-column", "justify-content-between");
+    content.append(contact);
 
-    utils.createTitle(contact, _contactContent.title);
+    utils.createTitle(contact, _contactContent.title, "h1", true);
+    utils.createInformations(contact, _contactContent.subheads.contact, _contactContent.contact);
 
-    for (let contactInformation in _contactContent.contact) {
-      let information = document.createElement("div");
-      information.innerHTML = `${_contactContent.contact[contactInformation]}`;
-      contact.append(information);
-    }
+    utils.createInformations(contact, _contactContent.subheads.address, _contactContent.address);
 
-    const address = document.createElement("div");
-    address.innerHTML = `${_contactContent.address.street}<br>${_contactContent.address.zip} ${_contactContent.address.city}<br>${_contactContent.address.country}`;
-    contact.append(address);
+    const hours = document.createElement("div");
+    hours.innerHTML = _contactContent.hours;
+    hours.classList.add("mt-2");
+    contact.append(hours);
 
     const reservation = document.createElement("div");
-    reservation.classList.add("reservation", "col-5", "p-5");
-    contactContainer.append(reservation);
+    reservation.classList.add("reservation", "col-12", "col-sm-5", "p-sm-5");
+    content.append(reservation);
 
-    utils.createTitle(reservation, _reservationContent.title);
+    utils.createTitle(reservation, _reservationContent.title, "h1", true);
 
     const form = document.createElement("form");
     form.classList.add("d-flex", "flex-column");
@@ -71,6 +68,7 @@ export const contact = (() => {
 
     const sendBtn = document.createElement("input");
     utils.createInput(form, sendBtn, "submit", "send", "send");
+    sendBtn.classList.add("mt-3", "align-self-center", "px-3");
     sendBtn.setAttribute("value", "Send");
 
   }
