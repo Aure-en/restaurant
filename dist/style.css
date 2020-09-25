@@ -56,12 +56,16 @@ button:focus {
   background: rgba(255, 241, 227, 0.85);
 }
 
-.home h1 {
-  margin-bottom: 1.5rem;
-}
-
 .home p {
   text-indent: 1.25rem;
+}
+
+.reservation input {
+  margin-bottom: 1rem;
+}
+
+.reservation label {
+  margin-bottom: 0;
 }
 
 

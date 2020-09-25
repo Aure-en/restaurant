@@ -1,4 +1,4 @@
-import { isEmptyObject } from "jquery";
+import { utils } from "./utils.js";
 
 export const contact = (() => {
 
@@ -25,13 +25,15 @@ export const contact = (() => {
 
   const display = (content) => {
 
-    const contact = document.createElement("div");
-    contact.classList.add("contact");
-    content.append(contact);
+    const contactContainer = document.createElement("div");
+    contactContainer.classList.add("m-auto", "d-flex", "justify-content-around");
+    content.append(contactContainer);
 
-    const contactTitle = document.createElement("h1");
-    contactTitle.innerHTML = _contactContent.title;
-    contact.append(contactTitle);
+    const contact = document.createElement("div");
+    contact.classList.add("contact", "col-5", "p-5");
+    contactContainer.append(contact);
+
+    utils.createTitle(contact, _contactContent.title);
 
     for (let contactInformation in _contactContent.contact) {
       let information = document.createElement("div");
@@ -44,29 +46,32 @@ export const contact = (() => {
     contact.append(address);
 
     const reservation = document.createElement("div");
-    reservation.classList.add("reservation");
-    content.append(reservation);
+    reservation.classList.add("reservation", "col-5", "p-5");
+    contactContainer.append(reservation);
 
-    const reservationTitle = document.createElement("h1");
-    reservationTitle.innerHTML = _reservationContent.title;
-    reservation.append(reservationTitle);
+    utils.createTitle(reservation, _reservationContent.title);
 
     const form = document.createElement("form");
     form.classList.add("d-flex", "flex-column");
     reservation.append(form);
 
-    for (let information of _reservationContent.inputs) {
-      let label = document.createElement("label");
-      label.setAttribute("for", information.toLowerCase());
-      label.innerHTML = information;
-      form.append(label);
+    utils.createLabel(form, "Name");
+    const inputName = document.createElement("input");
+    utils.createInput(form, inputName, "text", "name", "name");
 
-      let input = document.createElement("input");
-      input.setAttribute("type", "text");
-      input.setAttribute("name", information);
-      input.setAttribute("id", information);
-      form.append(input);
-    }
+    utils.createLabel(form, "Phone");
+    const inputTel = document.createElement("input");
+    utils.createInput(form, inputTel, "tel", "phone", "phone");
+
+    utils.createLabel(form, "Message");
+    const inputMessage = document.createElement("textarea");
+    inputMessage.setAttribute("id", "message");
+    inputMessage.setAttribute("name", "message");
+    form.append(inputMessage);
+
+    const sendBtn = document.createElement("input");
+    utils.createInput(form, sendBtn, "submit", "send", "send");
+    sendBtn.setAttribute("value", "Send");
 
   }
 

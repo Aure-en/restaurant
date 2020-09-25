@@ -1,8 +1,10 @@
+import { utils } from "./utils.js";
+
 export const menu = (() => {
 
   const _menuContent = {
     title: "Menu",
-    subhead: "Explore our delicious and handcrafted beverages. Make your break perfect by savoring them with a simple, yet delicious pastry.",
+    subhead: "Explore our delicious and handcrafted beverages. Make your break perfect by savoring them with a simple, yet delicious pastry. For longer breaks, feel free to try one of our salads or sandwiches, both made with the freshest organic ingredients.",
   
     headings: ["Drinks", "Food"],
     descriptions: ["Professionally crafted coffee, prepared with love by passionate baristas. Whether hot or cold, its taste is guaranteed to bloom in your mouth.",
@@ -23,37 +25,17 @@ export const menu = (() => {
 
   const background = "../assets/images/menu.jpg";
 
-  const _listCategory = (container, category, items) => {
 
-    for (let i = 0 ; i < category.length ; i++) {
-      let title = document.createElement("h3");
-      title.innerHTML = category[i];
-      container.append(title);
-  
-      let list = document.createElement("ul");
-
-      for (let j = 0 ; j < items[i].length ; j++) {
-        let item = document.createElement("li");
-        item.innerHTML = items[i][j];
-        list.append(item);
-      }
-
-      container.append(list);
-
-    }
-  };
 
   const display = (content) => {
 
     //Menu container
     const menu = document.createElement("div");
-    menu.classList.add("menu", "m-auto", "col-6", "p-5");
+    menu.classList.add("menu", "m-auto", "col-12", "col-sm-10", "col-md-8", "col-lg-6", "p-4", "p-sm-5");
     content.append(menu);
   
     //Menu header (title and short description)
-    const title = document.createElement("h1");
-    title.innerHTML = _menuContent.title;
-    menu.append(title);
+    utils.createTitle(menu, _menuContent.title, true);
   
     const subhead = document.createElement("div");
     subhead.innerHTML = _menuContent.subhead;
@@ -71,7 +53,7 @@ export const menu = (() => {
     menuList.append(drinks);
   
     //For each drink category, create the title of the category, followed by the list of items in this category.
-    _listCategory(drinks, _menuContent.drinksCategories, _menuContent.drinks);
+    utils.createList(drinks, _menuContent.drinksCategories, _menuContent.drinks);
     
     //2. Food
     const food = document.createElement("div");
@@ -79,7 +61,7 @@ export const menu = (() => {
     menuList.append(food);
   
     //For each food category, create the title of the category, followed by the list of items in this category.
-    _listCategory(food, _menuContent.foodCategories, _menuContent.food);
+    utils.createList(food, _menuContent.foodCategories, _menuContent.food);
   
   }
 
